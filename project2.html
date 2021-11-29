@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Public Sentiment Analysis on Lab-Grown Meat</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">See More Projects</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">My Portfolio</a></li>
+							<li><a href="about.html">About Me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/darren-tay-wei-hao/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/darren-tay-wei-hao98" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="minor">
+									<h2>Public Sentiment Analysis on Lab-Grown Meat</h2>
+									<p>In December 2020, Singapore became the first country in the world to legalise lab-grown meat for commercial use. Since this is quite a novelty, not much research has been done to analyse the public sentiments surrounding this affair.</p>
+								</header>
+								<p>The raw data used for the analysis was derived from the Reddit post <a href="https://www.reddit.com/r/worldnews/comments/k6ol09/nokill_labgrown_meat_to_go_on_sale_for_first_time/"> "<i>No-kill, lab-grown meat to go on sale for first time. Singapore’s approval of chicken cells grown in bioreactors is seen as landmark moment across industry</i>"</a>. The Python Reddit API Wrapper (PRAW) library was used to scrape the comments. After cleaning the data by removing stopwords and nonsensical comments, 448 comments were gathered before generating a word cloud as seen in Figure 1. We can see from the word cloud that there are concerns pertinent to “taste”, “waste”, “better”, “price” and “suffering”.</p>
+                                <p class="aligncenter">
+                                    <center><img src="images/WC.png" alt="" /></center><br>
+                                    <center>Figure 1: Word Cloud</center><br><br>
+                                </p>
+                                <p>The data was then analysed by applying VADER (Valence Aware Dictionary and sEntiment Reasoner) sentiment analysis, which is a tool specifically attuned to sentiments on social media comments. In short, the VADER tool determines how positive or negative a particular comment is. The percentage of comments by sentiment type (Positive/Neutral/Negative) is seen in Table 1, and the distribution of the VADER scores are represented in Figure 2. We can see that the scores are more positive than negative.</p>
+                            <table>
+                                <tr>
+                                    <th>Sentiment Type</th>
+                                    <th>Percentage</th>
+                                </tr>
+                                <tr>
+                                    <td>Positive</td>
+                                    <td>45.1%</td>
+                                </tr>
+                                <tr>
+                                    <td>Neutral</td>
+                                    <td>32.4%</td>
+                                </tr>
+                                <tr>
+                                    <td>Negative</td>
+                                    <td>22.5%</td>
+                                </tr>
+                            </table>
+                            <p><center>Table 1: Number of Positive/Neutral/Negative Comments</center></p>
+                            <p class="aligncenter">
+                                <center><img src="images/VADER.png" alt="" /></center><br>
+                                <center>Figure 2: VADER Sentiment Scores</center><br><br>
+                            <p>Topic modelling was also conducted to try and group different comments and classify them under a single topic as can be seen from Figure 3. Some broadly-defined topics can be 
+                                centred around the <i>ethicality</i> (zombie, animal, farm), <i>taste</i> (eat, taste, vegan, food, tofu), <i>future</i> of lab-grown meat (future, cost, year, time) and the <i>industrialisation</i> (risk, industry, tyson, company).
+                                </p>
+                                <p class="aligncenter">
+                                    <center><img src="images/TM.png" alt="" /></center><br>
+                                    <center>Figure 3: Topic Modelling Analysis</center><br><br>
+                            </section>
+
+					</div>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
